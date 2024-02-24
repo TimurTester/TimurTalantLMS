@@ -67,15 +67,17 @@ public class UserPage extends BasePage {
     }
 
     public boolean checkUserInTable() {
-        for(DataFromUserTable dataFromUserTable : getUderDataFromTable()){
-            if(dataFromUserTable.equals(addUserData)){
+        List<DataFromUserTable> dataFromUserTable = getUserDataFromTable();
+        System.out.println(dataFromUserTable);
+        for(DataFromUserTable userDataFromTable : dataFromUserTable){
+            if(userDataFromTable.equals(addUserData)){
                 return true;
             }
         }
         return false;
     }
 
-    public List<DataFromUserTable> getUderDataFromTable(){
+    public List<DataFromUserTable> getUserDataFromTable(){
         List<DataFromUserTable> dataFromUserTable = new ArrayList<>();
         DataFromUserTable userData = new DataFromUserTable();
 
@@ -91,7 +93,7 @@ public class UserPage extends BasePage {
 
     public int findIndexUserInTable() {
         int step = 0;
-            for(DataFromUserTable dataFromUserTable : getUderDataFromTable()){
+            for(DataFromUserTable dataFromUserTable : getUserDataFromTable()){
                 if(dataFromUserTable.equals(addUserData)){
                     return step;
                 }

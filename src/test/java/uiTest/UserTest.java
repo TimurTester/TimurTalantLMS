@@ -18,14 +18,15 @@ public class UserTest extends BaseTest {
     public void addUserInTableTest(){
         browserManager.openByNavigate(USER_PAGE.toString());
         userPage.addUserInTable();
+            browserManager.openByNavigate(USER_PAGE.toString());
+        System.out.println(userPage.checkUserInTable());
+        browserManager.openByNavigate(USER_PAGE.toString());
+        /*userPage.addUserInTable();
         browserManager.openByNavigate(USER_PAGE.toString());
         userPage.addUserInTable();
-        browserManager.openByNavigate(USER_PAGE.toString());
-        userPage.addUserInTable();
-        browserManager.openByNavigate(USER_PAGE.toString());
-       // userPage.checkUserInTable();
-        userPage.removeUser();
-        userPage.removeUser();
-        userPage.removeUser();
+        browserManager.openByNavigate(USER_PAGE.toString());*/
+       // userPage.removeUser();
+        /*userPage.removeUser();
+        userPage.removeUser();*/
     }
 }
