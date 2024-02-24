@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import org.openqa.selenium.By;
 
 public class WebElementHelper {
 
@@ -70,6 +71,12 @@ public class WebElementHelper {
     public WebElementHelper scrollDownPageAction(int deltaX, int deltaY){
         actions = new Actions(Driver.getDriver());
         actions.scrollByAmount(deltaX,deltaY);
+        return this;
+    }
+
+    public WebElementHelper moveToElement(WebElement element){
+        Actions action = new Actions(Driver.getDriver());
+        action.moveToElement(element).perform();
         return this;
     }
 }

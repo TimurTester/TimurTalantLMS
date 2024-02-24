@@ -6,6 +6,7 @@ import helper.WebElementHelper;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import pages.*;
 import pages.accountAndSettings.AccountUsersPage;
 import pages.accountAndSettings.BasicSettingsPage;
 import pages.accountAndSettings.ThemesPage;
@@ -31,10 +32,6 @@ import pages.reports.TrainingMatrixPage;
 import pages.reports.ReportsIconAndLinkPage;
 import pages.reports.CoursesUnderReportsPage;
 import pages.reports.UsersUnderReportsPage;
-import pages.LoginPage;
-import pages.UserTypesPage;
-import pages.AddUserTypePage;
-import pages.ExportPage;
 
 import java.util.List;
 
@@ -78,6 +75,8 @@ public class BaseTest {
     protected AddUserTypePage addUserTypePage;
     protected ExportPage exportPage;
 
+    protected UserPage userPage;
+
     @BeforeClass(alwaysRun = true)
     public void setUp(){
         driver = Driver.getDriver();
@@ -114,12 +113,13 @@ public class BaseTest {
         usersUnderReportsPage = new UsersUnderReportsPage();
         addUserTypePage = new AddUserTypePage();
         exportPage = new ExportPage();
+        userPage = new UserPage();
         browserManager.openByNavigate(LOGIN.toString());
         loginPage.doLogin();
     }
 
     @AfterClass(alwaysRun = true)
     public void tearDown(){
-        Driver.closeDriver();
+//        Driver.closeDriver();
     }
 }

@@ -1,5 +1,6 @@
 package helper;
 
+import entity.DataFromUserTable;
 import entity.User;
 import com.github.javafaker.Faker;
 
@@ -15,5 +16,13 @@ public class FakeDataHelper {
         user.setUsername(faker.name().username());
         user.setBio("Tests won't fail if you don't write tests :)");
         return user;
+    }
+
+    public static DataFromUserTable saveUserFormTable(String userName, String email, String userType){
+        DataFromUserTable dataFromUserTable = new DataFromUserTable();
+        dataFromUserTable.setUserName(userName);
+        dataFromUserTable.setEmail(email);
+        dataFromUserTable.setUserType(userType);
+        return dataFromUserTable;
     }
 }
